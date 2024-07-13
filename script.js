@@ -12,20 +12,39 @@ function Book(title, author, pages, has_read) {
 
 function addBookToLibrary(Book) {
     myLibrary.push(Book);
-    displayLibrary();
     
-  }
+    const libraryBooks = document.querySelector(".libraryBooks");
+    
+    currBook = document.createElement("div");
+    currBook.id = "book"
 
-function displayLibrary(){
-    resetLibrary();
-    for (i=0; i< myLibrary.length; i++){
-        return
+    bookTitle = document.createElement("div");
+    bookTitle.textContent = Book.title;
+
+    bookAuthor = document.createElement("div");
+    bookAuthor.textContent = "By " + Book.author;
+
+    bookLength = document.createElement("div");
+    bookLength.textContent = "Pages: " + Book.pages;
+
+    bookReadStatus = document.createElement("div");
+    if (Book.has_read){
+        bookReadStatus.textContent = "This book has been read";
+    } else {
+        bookReadStatus.textContent = "This book has not been read";
     }
 
-}
+    currBook.appendChild(bookTitle);
+    currBook.appendChild(bookAuthor);
+    currBook.appendChild(bookLength);
+    currBook.appendChild(bookReadStatus);
 
-function resetLibrary(){
-    // Shows no books on display for library
+    libraryBooks.appendChild(currBook);
+
+
+  }
+
+function deleteBook(){
     return
 }
 
@@ -37,9 +56,7 @@ function readBook(){
 
 const addBook = document.querySelector(".addBookButton");
 addBook.addEventListener("click", () => {
-    console.log(123);
-    });
-
+    console.log(1121223)});
 
 
 // Sample books to populate the library first
