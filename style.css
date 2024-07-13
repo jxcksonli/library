@@ -1,0 +1,40 @@
+* {
+    margin: auto;
+}
+
+.library-font {
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.header-title {
+    text-align: center;
+    letter-spacing: 2vw;
+    background-color: #aaadac;
+    height: 15vh;
+    display: grid;
+}
+
+.addbookform{
+    height: 25vh;
+    background-color: #e8e9e8;
+    display: grid;
+}
+
+.bookforminputs{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr); 
+    gap: 2vh;
+}
+
+.addBookButton{
+    color: black;
+    transition: 0.2s;
+    width: 8vw;
+}
+
+.addBookButton:hover{
+    color: black;
+    background-color: white;
+}

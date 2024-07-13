@@ -5,9 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
     <script src="script.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Dosis:wght@200..800&display=swap" rel="stylesheet">    
     <title> Jackson's Library </title>
 </head>
 <body>
+    <header class="library-font header-title">
+        <h1> Jackson's Library </h1>
+    </header>
+    <div class="addbookform library-font">
+        <h3> Add book </h3>
+        <form action="example.com" method="post">
+        <div class="bookforminputs">
+            <div class="indivinput">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" title="Please enter the title of the book"  minlength="1" required>
+            </div>
+
+            <div class="indivinput">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" title="Please enter the author of the book"  minlength="1" required>
+            </div>
+
+            <div class="indivinput">
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" title="Please enter a number"  min="1" required>
+            </div>
+
+            <div class="indivinput">
+                <label for="readStatus">Have you read it?</label>
+                <input type="checkbox" id="readStatus" title="Have you read the book?" name="readStatus">
+            </div>
+        </div>
+        </form>
+        <button class="addBookButton library-font"> Add book! </button>
+    </div>
+    </div>
     
 </body>
 </html>
