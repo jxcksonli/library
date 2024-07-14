@@ -58,13 +58,19 @@ addBookToLibrary(tkam);
 addBookToLibrary(tgg);
 addBookToLibrary(pap);
   
-const addBook = document.querySelector(".addBookButton");
-addBook.addEventListener("click", () => {
-    console.log(1121223)});
-
 const removeBookbutton = document.querySelectorAll(".removeBook");
 removeBookbutton.forEach((removeButton) => {
     removeButton.addEventListener("click", () => {
-        removeButton.parentElement.remove();
+        myLibrary.splice(myLibrary.indexOf(removeButton.parentElement),1);
+        removeButton.parentElement.remove(removeButton);
   });
   });
+
+const addBook = document.querySelector(".addBookButton");
+addBook.addEventListener("click", () => {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const readStatus = document.getElementById("readStatus").checked;
+    addBookToLibrary(new Book(title, author, pages, readStatus)) 
+});
