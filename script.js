@@ -45,6 +45,14 @@ function addBookToLibrary(Book) {
     currBook.appendChild(bookRemove);
 
     libraryBooks.appendChild(currBook);
+
+    const removeBookbutton = document.querySelectorAll(".removeBook");
+    removeBookbutton.forEach((removeButton) => {
+        removeButton.addEventListener("click", () => {
+            myLibrary.splice(myLibrary.indexOf(removeButton.parentElement),1);
+            removeButton.parentElement.remove(removeButton);
+  });
+  });
   }
 
 // Sample books to populate the library first
@@ -57,14 +65,6 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(tkam);
 addBookToLibrary(tgg);
 addBookToLibrary(pap);
-  
-const removeBookbutton = document.querySelectorAll(".removeBook");
-removeBookbutton.forEach((removeButton) => {
-    removeButton.addEventListener("click", () => {
-        myLibrary.splice(myLibrary.indexOf(removeButton.parentElement),1);
-        removeButton.parentElement.remove(removeButton);
-  });
-  });
 
 const addBook = document.querySelector(".addBookButton");
 addBook.addEventListener("click", () => {
