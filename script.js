@@ -16,7 +16,7 @@ function addBookToLibrary(Book) {
     const libraryBooks = document.querySelector(".libraryBooks");
     
     currBook = document.createElement("div");
-    currBook.id = "book"
+    currBook.classList.add("book");
 
     bookTitle = document.createElement("div");
     bookTitle.textContent = Book.title;
@@ -34,30 +34,18 @@ function addBookToLibrary(Book) {
         bookReadStatus.textContent = "This book has not been read";
     }
 
+    bookRemove = document.createElement("button");
+    bookRemove.textContent = "Remove book";
+    bookRemove.classList.add("removeBook");
+
     currBook.appendChild(bookTitle);
     currBook.appendChild(bookAuthor);
     currBook.appendChild(bookLength);
     currBook.appendChild(bookReadStatus);
+    currBook.appendChild(bookRemove);
 
     libraryBooks.appendChild(currBook);
-
-
   }
-
-function deleteBook(){
-    return
-}
-
-function readBook(){
-    return
-    // Changes status of book
-}
-
-
-const addBook = document.querySelector(".addBookButton");
-addBook.addEventListener("click", () => {
-    console.log(1121223)});
-
 
 // Sample books to populate the library first
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
@@ -69,3 +57,14 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(tkam);
 addBookToLibrary(tgg);
 addBookToLibrary(pap);
+  
+const addBook = document.querySelector(".addBookButton");
+addBook.addEventListener("click", () => {
+    console.log(1121223)});
+
+const removeBookbutton = document.querySelectorAll(".removeBook");
+removeBookbutton.forEach((removeButton) => {
+    removeButton.addEventListener("click", () => {
+        removeButton.parentElement.remove();
+  });
+  });
